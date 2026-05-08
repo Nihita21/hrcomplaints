@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <div class="card shadow border-0">
+            <div class="card-header bg-primary text-white text-center py-3">
+                <h4 class="mb-0">Create Account</h4>
+            </div>
+            <div class="card-body p-4">
+                <form method="POST" id="registerForm">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Full Name</label>
+                        <input type="text" name="username" class="form-control" placeholder="John Doe" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Email Address</label>
+                        <input type="email" name="email" class="form-control" placeholder="name@company.com" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Password</label>
+                        <input type="password" name="password" id="password" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Confirm Password</label>
+                        <input type="password" name="confirm_password" id="confirm_password" class="form-control" required>
+                        <div id="passwordError" class="text-danger small mt-1" style="display:none;">
+                            Passwords do not match!
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 py-2 shadow-sm">Register</button>
+                </form>
+            </div>
+            <div class="card-footer text-center py-3">
+                <small>Already have an account? <a href="/login">Login here</a></small>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // Simple client-side validation to check if passwords match
+    const form = document.getElementById('registerForm');
+    const password = document.getElementById('password');
+    const confirm = document.getElementById('confirm_password');
+    const errorMsg = document.getElementById('passwordError');
+
+    form.onsubmit = function(e) {
+        if (password.value !== confirm.value) {
+            e.preventDefault();
+            errorMsg.style.display = 'block';
+            confirm.classList.add('is-invalid');
+            return false;
+        }
+    };
+</script>
+{% endblock %}

@@ -1,0 +1,19 @@
+{
+    "users": {
+        "abc@gmail.com": {
+            "full_name": "NIHITA GUPTA",
+            "password": "scrypt:32768:8:1$ox4aQiBFTl12XHZc$f0624d28f00f85bef57407d941b0242891da28ff6dab54723e7fdc377f4891399e01e71809a05a39c54753419e91fefcad89d511db54bfb7d42a01ee09aa85ae",
+            "role": "employee",
+            "created_at": "2026-05-08 19:35:28"
+        }
+    },
+    "complaints": [
+        {
+            "user": "abc@gmail.com",
+            "subject": "payroll",
+            "description": "Paycheck delayed",
+            "anonymous": false,
+            "timestamp": "2026-05-08 19:38:37"
+        }
+    ]
+}
